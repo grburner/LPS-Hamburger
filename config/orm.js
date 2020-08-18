@@ -1,4 +1,4 @@
-const connection = require('../connection.js');
+const connection = require('./connection.js');
 const { query } = require('express');
 
 const orm = {   
@@ -21,6 +21,7 @@ const orm = {
                 if (err) {
                     reject(new Error(err));
                 } else {
+                    console.log(results)
                     resolve(results)
                 }
             });
@@ -39,3 +40,5 @@ const orm = {
         });
     } 
 };
+
+module.exports = orm;
