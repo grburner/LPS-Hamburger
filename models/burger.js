@@ -8,7 +8,10 @@ const burger = {
         });
     },
     insert: function insertOne(burger, bool) {
-        orm.insertOne(burger, bool);
+        return new Promise( async (resolve, reject) => {
+            const insBurger = await orm.insertOne(burger, bool).catch(err => console.log('Error inserting new Burger: ' + err) );
+            resolve(insBurger)
+        })
     },
     update: function updateOne(bool, burger) {
         orm.updateOne(bool, burger);

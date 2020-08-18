@@ -8,10 +8,15 @@ router.get("/", async (req, res) => {
     let hbsObj = {
         burgers: burgers
     }
-    console.log(hbsObj)
     res.render("index", hbsObj)
 });
 
-router.post("/api/burgers")
+router.post("/api/burgers", async (req, res) => {
+    const insBurger = await burger.insert(req.body.burger_name, req.body.devoured);
+    console.log(insBurger)
+    setTimeout(() => {
+        res.redirect("/");
+    }, 5000);
+});
 
 module.exports = router;
