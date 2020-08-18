@@ -12,4 +12,6 @@ router.get("/", async (req, res) => {
     res.render("index", hbsObj)
 });
 
+router.post("/api/burgers")
+
 module.exports = router;
