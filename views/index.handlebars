@@ -1,16 +1,20 @@
-<h1>Burger Lists</h1>
+<h1>Burger LIST</h1>
 <h2 class="devoured"> DEVOURED!</h2>
 
 <ul class="devoured-list">
-    {{#each burger}}
+    DEVOURED
+    {{#each burgers}}
         {{#if devoured}}
+            {{burger_name}}
         {{/if}}
     {{/each}}
 </ul>
 
 <ul class="notdevoured-list">
-    {{#each burger}}
+    SOON TO BE DEVOURED
+    {{#each burgers}}
         {{#unless devoured}}
+            {{burger_name}}
         {{/unless}}
     {{/each}}
 </ul>

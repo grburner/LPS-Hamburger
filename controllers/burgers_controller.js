@@ -5,7 +5,11 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     const burgers = await burger.all();
-    res.render("index", burgers)
+    let hbsObj = {
+        burgers: burgers
+    }
+    console.log(hbsObj)
+    res.render("index", hbsObj)
 });
 
 module.exports = router;

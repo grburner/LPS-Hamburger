@@ -3,9 +3,8 @@ const orm = require('../config/orm.js');
 const burger = {
     all: function selectAll() {
         return new Promise( async (resolve, reject) => {
-            const allBurgers = await orm.selectAll('burgers')
+            const allBurgers = await orm.selectAll('burgers').catch(err => console.log('Error getting data from the ORM: ' + err) );
             resolve(allBurgers)
-            //do I need to handle rejections here since theyre already being handled in the ORM file?
         });
     },
     insert: function insertOne(burger, bool) {
