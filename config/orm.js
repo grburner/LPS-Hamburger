@@ -14,10 +14,10 @@ const orm = {
             });
         });
     },
-    insertOne: (newBurger, bool) => {
+    insertOne: (name, bool) => {
         return new Promise((resolve, reject) => {
             let queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?,?);"
-            connection.query(queryString, [newBurger, bool], (err, results) => {
+            connection.query(queryString, [name, bool], (err, results) => {
                 if (err) {
                     reject(new Error(err));
                 } else {
@@ -27,10 +27,10 @@ const orm = {
             });
         });
     },
-    updateOne: (bool, burgerName) => {
+    updateOne: (bool, name) => {
         return new Promise((resolve, reject) => {
             let queryString = "UPDATE burgers SET devoured = ? WHERE burger_name = ?;"
-            connection.query(queryString, [bool, burgerName], (err, results) => {
+            connection.query(queryString, [bool, name], (err, results) => {
                 if (err) {
                     reject(new Error(err));
                 } else {
