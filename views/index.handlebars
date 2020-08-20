@@ -5,7 +5,7 @@
     DEVOURED
     {{#each burgers}}
         {{#if devoured}}
-            {{burger_name}}
+            {{> burger-block devoured=true}}
         {{/if}}
     {{/each}}
 </ul>
@@ -14,7 +14,7 @@
     SOON TO BE DEVOURED
     {{#each burgers}}
         {{#unless devoured}}
-            {{burger_name}}
+            {{> burger-block devoured=false}}
         {{/unless}}
     {{/each}}
 </ul>

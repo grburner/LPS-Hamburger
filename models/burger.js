@@ -13,9 +13,17 @@ const burger = {
             resolve(insBurger)
         })
     },
-    update: function updateOne(bool, burger) {
-        orm.updateOne(bool, burger);
-    } 
-}
+    update: function updateOne(bool, id) {
+        console.log(id)
+        return new Promise( async (resolve, reject) => {
+            resolve(orm.updateOne(bool, id));
+        });
+    },
+    delete: function deleteOne(id) {
+        return new Promise( async (resolve, reject) => {
+            resolve(orm.deleteOne(id));
+        });
+    }
+};
 
 module.exports = burger;

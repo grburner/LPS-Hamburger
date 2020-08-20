@@ -27,10 +27,11 @@ const orm = {
             });
         });
     },
-    updateOne: (bool, name) => {
+    updateOne: (bool, id) => {
         return new Promise((resolve, reject) => {
-            let queryString = "UPDATE burgers SET devoured = ? WHERE burger_name = ?;"
-            connection.query(queryString, [bool, name], (err, results) => {
+            let queryString = "UPDATE burgers SET devoured = ? WHERE id = ?;"
+            connection.query(queryString, [bool, id], (err, results) => {
+                console.log(queryString)
                 if (err) {
                     reject(new Error(err));
                 } else {
@@ -38,7 +39,19 @@ const orm = {
                 }
             });
         });
-    } 
+    },
+    deleteOne: (id) => {
+        return new Promise((resolve, reject) => {
+            let queryString = "DELETE burgers WHERE id = ?;"
+            connection.query(queryString, [id], (err,results) => {
+                if (err) {
+                    reject(new Error(err));
+                } else {
+                    resolve(results)
+                }
+            });
+        });
+    }
 };
 
 module.exports = orm;

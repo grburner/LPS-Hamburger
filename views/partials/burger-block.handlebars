@@ -1,0 +1,9 @@
+<li>
+	{{burger_name}}
+
+	<button class="change-status" data-id="{{id}}" data-devoured="{{devoured}}">
+		{{#if devoured}}IN YOUR BELLY!{{else}}TIME TO EAT ME!{{/if}}
+	</button>
+
+	<button class="delete-burg" data-id="{{this.id}}">DELETE!</button>
+</li>
