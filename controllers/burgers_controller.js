@@ -34,8 +34,10 @@ router.put("/api/update/:id/:dev", async (req, res) => {
 
 
 
-router.delete("api/delete/:id", async (req, res) => {
+router.delete("/api/delete/:id", async (req, res) => {
     const delID = req.params.id
+    burger.delete(delID)
+    res.redirect(303, '/');
 });
 
 module.exports = router;

@@ -42,7 +42,7 @@ const orm = {
     },
     deleteOne: (id) => {
         return new Promise((resolve, reject) => {
-            let queryString = "DELETE burgers WHERE id = ?;"
+            let queryString = "DELETE FROM burgers WHERE id = ?;"
             connection.query(queryString, [id], (err,results) => {
                 if (err) {
                     reject(new Error(err));

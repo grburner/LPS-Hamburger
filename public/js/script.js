@@ -38,7 +38,7 @@ $(() => {
         $(".delete-burg").on("click", function(event) {
             const id = $(this).data("id");
     
-            $.ajax("api/delete/" + id, {
+            $.ajax(`api/delete/${id}`, {
                 type: "DELETE"
             }).then(
                 function() {
