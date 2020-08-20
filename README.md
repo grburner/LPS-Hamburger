@@ -6,9 +6,9 @@
 ## Author: grburner
 
 
-<p align="center">
+<!-- <p align="center">
   <img alt="README Generator in Action" src="screenshot.png">
-</p>
+</p> -->
 
 ## Table of Contents
 <!--ts-->
