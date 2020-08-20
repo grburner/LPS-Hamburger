@@ -1,37 +1,46 @@
 <h1>Burger LIST</h1>
 <h2 class="devoured"> DEVOURED!</h2>
 
-<ul class="devoured-list">
-    DEVOURED
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burger-block devoured=true}}
-        {{/if}}
-    {{/each}}
-</ul>
 
-<ul class="notdevoured-list">
-    SOON TO BE DEVOURED
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{> burger-block devoured=false}}
-        {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+<div class="container">
+  <div class="row"></div>
+    <div class="col">
+      <ul class="devoured-list">
+          DEVOURED
+          {{#each burgers}}
+              {{#if devoured}}
+                  {{> burger-block devoured=true}}
+              {{/if}}
+          {{/each}}
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="notdevoured-list">
+          SOON TO BE DEVOURED
+          {{#each burgers}}
+              {{#unless devoured}}
+                  {{> burger-block devoured=false}}
+              {{/unless}}
+          {{/each}}
+      </ul>
+    </div>
   </div>
+  <div class="row">
+    <h2>Add a Burger</h2>
+    <form class="create-form">
 
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Waiting to be Devoured
+      <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="devoured">Devoured?</label><br>
+        <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+        <input type="radio" name="devoured" value="0"> Waiting to be Devoured
+      </div>
+
+      <button type="submit">Add Burger</button>
+    </form>
   </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+</div>
