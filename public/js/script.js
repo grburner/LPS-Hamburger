@@ -28,7 +28,12 @@ $(() => {
             $.ajax(`/api/update/${id}/${devoured}`, {
                 type: "PUT",
                 body: props
-            });
+            }).then(
+                () => {
+                    console.log("updated burger");
+                    location.reload();
+                }
+            );
         });
         $(".delete-burg").on("click", function(event) {
             const id = $(this).data("id");
